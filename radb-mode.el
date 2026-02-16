@@ -3,7 +3,7 @@
 ;; Author: Boris Glavic <lordpretzel@gmail.com>
 ;; Maintainer: Boris Glavic <lordpretzel@gmail.com>
 ;; Version: 0.1
-;; Package-Requires: ()
+;; Package-Requires: ((emacs "29"))
 ;; Homepage: https://github.com/lordpretzel/radb-mode
 ;; Keywords:
 
@@ -25,7 +25,7 @@
 
 ;;; Commentary:
 
-;;
+;; Tree-sitter based major mode for editing radb .ra files.
 
 ;;; Code:
 
@@ -158,8 +158,8 @@
       (treesit-node-child-by-field-name
        (treesit-node-child node 0)
        "command"))))
-    (t
-     (treesit-node-text node))))
+    (_
+     (substring (treesit-node-text node) 0 40))))
 
 (defun radb-mode--treesit-defun-name (node)
   "Treesit node types NODE defined to be defuns."
@@ -186,7 +186,10 @@
 
 ;;;###autoload
 (define-derived-mode radb-mode prog-mode "radb"
-  "Major mode for editing radb relational algebra files using the tree-sitter library.
+  "Major mode for editing radb relational algebra files.
+
+This major mode uses the tree-sitter library and grammar from
+`https://github.com/lordpretzel/tree-sitter-radb'.
 
 \\{radb-mode-map}"
   ;; :syntax-table python-mode-syntax-table

@@ -7,7 +7,7 @@
 
 # radb-mode
 
-Small library for adding and removing advice to functions.
+Major mode for editing [](radb) relational algebra files. This uses the tree-sitter grammar from [https://github.com/lordpretzel/tree-sitter-radb](https://github.com/lordpretzel/tree-sitter-radb).
 
 ## Installation
 
