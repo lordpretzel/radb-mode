@@ -139,6 +139,7 @@
        ((match nil "join" "condition" nil nil) parent 5)
        ((query "(projection ((_) @ident))") parent 10)
        ((query "(rename ((_) @ident))") parent 9)
+       (no-node parent-bol 0)
        ((catch-all) column-0 0)))
   "Tree-sitter indentation rules.")
 
@@ -159,7 +160,9 @@
        (treesit-node-child node 0)
        "command"))))
     (_
-     (substring (treesit-node-text node) 0 40))))
+     (substring (treesit-node-text node)
+                0
+                (min (length (treesit-node-text node)) 40)))))
 
 (defun radb-mode--treesit-defun-name (node)
   "Treesit node types NODE defined to be defuns."

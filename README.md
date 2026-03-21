@@ -7,7 +7,7 @@
 
 # radb-mode
 
-Major mode for editing [](radb) relational algebra files. This uses the tree-sitter grammar from [https://github.com/lordpretzel/tree-sitter-radb](https://github.com/lordpretzel/tree-sitter-radb).
+Major mode for editing [radb](https://users.cs.duke.edu/~junyang/radb/) relational algebra files. This uses the tree-sitter grammar from [https://github.com/lordpretzel/tree-sitter-radb](https://github.com/lordpretzel/tree-sitter-radb).
 
 ## Installation
 
