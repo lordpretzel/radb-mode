@@ -20,9 +20,10 @@ jobs:
             ts: true
             lint: true
     steps:
-    - uses: purcell/setup-emacs@master
+    - uses: jcs090218/setup-emacs@master
       with:
         version: ${{ matrix.emacs }}
+        
     - uses: actions/checkout@v6
 
     - name: Setup Eldev
