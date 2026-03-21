@@ -23,7 +23,7 @@ jobs:
     - uses: purcell/setup-emacs@master
       with:
         version: ${{ matrix.emacs }}
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Setup Eldev
       uses: emacs-eldev/setup-eldev@v1
