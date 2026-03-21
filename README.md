@@ -24,6 +24,14 @@ Major mode for editing [radb](https://users.cs.duke.edu/~junyang/radb/) relation
 
 <!-- to install it. -->
 
+### Use-package-vc
+
+~~~elisp
+(use-package radb-mode
+    :vc (:url "https://github.com/lordpretzel/radb-mode"))
+~~~
+
+
 ### Quelpa
 
 Using [use-package](https://github.com/jwiegley/use-package) with [quelpa](https://github.com/quelpa/quelpa).

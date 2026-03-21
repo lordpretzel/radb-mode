@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - emacs: 29.4
+            ts: true
+            lint: true
+          - emacs: 30.2
+            ts: false
+            lint: true
+          - emacs: snapshot
+            ts: true
+            lint: true
+    steps:
+    - uses: purcell/setup-emacs@master
+      with:
+        version: ${{ matrix.emacs }}
+    - uses: actions/checkout@v4
+
+    - name: Setup Eldev
+      uses: emacs-eldev/setup-eldev@v1
+      with:
+        bootstrap: auto # Bootstraps Eldev if Emacs is ready
+        cache: true     # Caches Eldev's GPAC for speed
+                    
+    - name: Lint package
+      run: eldev lint
+
+    - name: Install dependencies
+      run: eldev prepare
+
+    - name: Build package
+      run: eldev compile && eldev package

@@ -1,11 +1,11 @@
-;;; radb-mode.el --- Major mode for editing radb (relational algebra) files. -*- lexical-binding: t -*-
+;;; radb-mode.el --- Major mode for editing radb (relational algebra) files -*- lexical-binding: t -*-
 
 ;; Author: Boris Glavic <lordpretzel@gmail.com>
 ;; Maintainer: Boris Glavic <lordpretzel@gmail.com>
 ;; Version: 0.1
-;; Package-Requires: ((emacs "29"))
+;; Package-Requires: ((emacs "29.1"))
 ;; Homepage: https://github.com/lordpretzel/radb-mode
-;; Keywords:
+;; Keywords: languages
 
 
 ;; This file is not part of GNU Emacs
@@ -100,8 +100,7 @@
 
    :feature 'string
    :override t
-   '((COMMENT) @font-lock-comment-face)
-   )
+   '((COMMENT) @font-lock-comment-face))
   "Tree-sitter font-lock settings.")
 
 (defcustom radb-mode-indent-offset
